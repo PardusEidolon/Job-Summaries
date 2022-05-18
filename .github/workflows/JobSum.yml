@@ -1,0 +1,16 @@
+name: Job Summaries
+
+on: 
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  Summary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+      
+      - name: Echo me!
+        id: tml
+        run: echo "hello ${{ github.actor }}"
