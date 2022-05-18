@@ -15,5 +15,17 @@ jobs:
         id: tml
         run: echo "hello ${{ github.actor }}"
 
-      - name: Outcomes
-        run: echo ${{ steps.tml.outcome }} >> $GIHUB_STEP_SUMMARY
+      - uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          recreate: true
+          message: |
+            # :rocket: ${{ github.actor }} Pull request Succesfully Deployed! :rocket:
+            
+            Thank you for raising your pull request.
+            
+            | Step ID :computer: |  Result :clipboard: |
+            |---           |                       ---|
+            |  **Test 1**  | `${{steps.tml.outcome}}` |
+            |  **Test 2**  | `${{steps.tml.outcome}}` |
+
+            *This Action was created by @PardusEidolon*
