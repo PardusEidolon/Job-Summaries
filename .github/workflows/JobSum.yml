@@ -14,3 +14,6 @@ jobs:
       - name: Echo me!
         id: tml
         run: echo "hello ${{ github.actor }}"
+
+      - name: Outcomes
+        run: echo ${{ steps.tml.outcome }} >> $GIHUB_STEP_SUMMARY
