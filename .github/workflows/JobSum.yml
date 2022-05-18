@@ -14,19 +14,24 @@ jobs:
       - name: Echo me!
         id: tml
         run: echo "hello ${{ github.actor }}"
-
-      - name: Create sticky comment
-        uses: marocchino/sticky-pull-request-comment@v2.2.0
+  
+      - uses: marocchino/sticky-pull-request-comment@v2
         with:
-          recreate: true
           message: |
-            # :rocket: ${{ github.actor }} Pull request Succesfully Deployed! :rocket:
-            
-            Thank you for raising your pull request.
-            
-            | Step ID :computer: |  Result :clipboard: |
-            |---           |                       ---|
-            |  **Test 1**  | `${{steps.tml.outcome}}` |
-            |  **Test 2**  | `${{steps.tml.outcome}}` |
+            Release ${{ github.sha }} to <https://pr-${{ github.event.number }}.example.com>
 
-            *This Action was created by @PardusEidolon*
+#       - name: Create sticky comment
+#         uses: marocchino/sticky-pull-request-comment@v2.2.0
+#         with:
+#           recreate: true
+#           message: |
+#             # :rocket: ${{ github.actor }} Pull request Succesfully Deployed! :rocket:
+            
+#             Thank you for raising your pull request.
+            
+#             | Step ID :computer: |  Result :clipboard: |
+#             |---           |                       ---|
+#             |  **Test 1**  | `${{steps.tml.outcome}}` |
+#             |  **Test 2**  | `${{steps.tml.outcome}}` |
+
+#             *This Action was created by @PardusEidolon*
