@@ -15,7 +15,8 @@ jobs:
         id: tml
         run: echo "hello ${{ github.actor }}"
 
-      - uses: marocchino/sticky-pull-request-comment@v2
+      - name: Create sticky comment
+        uses: marocchino/sticky-pull-request-comment@v2.2.0
         with:
           recreate: true
           message: |
