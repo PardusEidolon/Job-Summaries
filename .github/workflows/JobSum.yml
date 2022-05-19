@@ -11,7 +11,8 @@ jobs:
       - name: checkout repo
         id: chkout
         uses: actions/checkout@v3
-        run: |
+        
+      -  run: |
           ctime=$(date)
           echo "::set-output name=actionchk::$ctime
       
