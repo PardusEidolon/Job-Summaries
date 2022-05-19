@@ -9,7 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo
+        id: chkout
         uses: actions/checkout@v3
+        run: |
+          ctime=$(date)
+          echo "::set-output name=actionchk::$ctime
       
       - name: Echo me!
         id: tml
@@ -20,13 +24,17 @@ jobs:
         with:
           recreate: true
           message: |
-            # :rocket: ${{ github.actor }} Pull request Succesfully Deployed! :rocket:
+            # :rocket: **${{ github.actor }}** Pull request Succesfully Deployed! :rocket:
             
             Thank you for raising your pull request.
             
-            | Step ID :computer: |  Result :clipboard: |
-            |---           |                       ---|
-            |  **Test 1**  | `${{steps.tml.outcome}}` |
-            |  **Test 2**  | `${{steps.tml.outcome}}` |
+            | Step ID :clipboard: | Result :microscope: |   attempts :computer: |
+            |---|---|---|
+            |  **Test 1**  | ${{steps.tml.outcome}} | {{ github.run_attempt }} | 
+            |  **Test 2**  | ${{steps.tml.outcome}} | {{ github.run_attempt }} | 
+            |  **Test 3**  | ${{steps.tml.outcome}} | {{ github.run_attempt }} | 
+            |  **Test 4**  | ${{steps.tml.outcome}} | {{ github.run_attempt }} |
+
+            **${{steps.chkout.outputs.actionchk}}**
 
             *This Action was created by @PardusEidolon*
