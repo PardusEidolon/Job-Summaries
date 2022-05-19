@@ -13,7 +13,7 @@ jobs:
       
       - name: Echo me!
         id: tml
-        run: echo "hello ${{ github.actor }}"
+        run: echo "hello :rocket:" >> $GITHUB_STEP_SUMMARY
 
       - name: Create sticky comment
         uses: marocchino/sticky-pull-request-comment@v2.2.0
