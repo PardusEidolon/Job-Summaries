@@ -15,6 +15,7 @@ jobs:
         run: |
           ctime=$(date)
           echo "::set-output name=actionchk::$ctime"
+      
       - name: Echo me!
         id: tml
         run: echo "hello :rocket:" >> $GITHUB_STEP_SUMMARY
@@ -35,6 +36,6 @@ jobs:
             |  **Test 3**  | ${{steps.tml.outcome}} | ${{ github.run_attempt }} | 
             |  **Test 4**  | ${{steps.tml.outcome}} | ${{ github.run_attempt }} |
 
-            ${{steps.chkout.outputs.actionchk}}
+            ---
 
-            *This Action was created by @PardusEidolon*
+            *This Action was created by @PardusEidolon* on **${{steps.chkout.outputs.actionchk}}** 
