@@ -36,7 +36,7 @@ jobs:
           Qstart="${Qstart//'%'/'%25'}"
           Qstart="${Qstart//$'\n'/'%0A'}"
           Qstart="${Qstart//$'\r'/'%0D'}"
-          echo "::set-output name=hugoQuick::$Qstart" >> $GITHUB_STEP_SUMMARY
+          echo "```::set-output name=hugoQuick::$Qstart```" >> $GITHUB_STEP_SUMMARY
 
       - name: Create sticky comment
         uses: marocchino/sticky-pull-request-comment@v2.2.0
