@@ -36,6 +36,6 @@ jobs:
             |  **Test 3**  | ${{steps.tml.outcome}} | ${{ github.run_attempt }} | 
             |  **Test 4**  | ${{steps.tml.outcome}} | ${{ github.run_attempt }} |
 
-            **${{steps.chkout.outputs.actionchk}}**
+            ${{steps.chkout.outputs.actionchk}}
 
             *This Action was created by @PardusEidolon*
