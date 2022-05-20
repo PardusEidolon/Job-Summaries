@@ -27,7 +27,10 @@ jobs:
           extended: true
       
       - name: Job summary start
-        run: echo "## Hello ${{github.actor}} :rocket:" >> $GITHUB_STEP_SUMMARY
+        run: |
+          echo "## Hello ${{github.actor}} :rocket:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
 
       - name: Setup a hugo site quickly
         id: quickstart
@@ -36,12 +39,7 @@ jobs:
           Qstart="${Qstart//'%'/'%25'}"
           Qstart="${Qstart//$'\n'/'%0A'}"
           Qstart="${Qstart//$'\r'/'%0D'}"
-          echo "::set-output name=hugoQuick::$Qstart"
-      
-      - name: add output to summary
-        run: |
-          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
-          echo ${{steps.quickstart.outputs.hugoQuick}} >> $GITHUB_STEP_SUMMARY
+          echo "::set-output name=hugoQuick::$Qstart" >> $GITHUB_STEP_SUMMARY
           echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
 
       - name: Create sticky comment
