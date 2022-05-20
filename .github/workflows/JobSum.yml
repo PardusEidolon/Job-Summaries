@@ -9,13 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo
-        id: chkout
         uses: actions/checkout@v3
         
-      -  run: |
+      - id: chkout
+        run: |
           ctime=$(date)
-          echo "::set-output name=actionchk::$(echo $ctime)"
-      
+          echo "::set-output name=actionchk::$ctime"
       - name: Echo me!
         id: tml
         run: echo "hello :rocket:" >> $GITHUB_STEP_SUMMARY
