@@ -31,10 +31,10 @@ jobs:
             
             | Step ID :clipboard: | Result :microscope: |   attempts :computer: |
             |---|---|---|
-            |  **Test 1**  | ${{steps.tml.outcome}} | {{ github.run_attempt }} | 
-            |  **Test 2**  | ${{steps.tml.outcome}} | {{ github.run_attempt }} | 
-            |  **Test 3**  | ${{steps.tml.outcome}} | {{ github.run_attempt }} | 
-            |  **Test 4**  | ${{steps.tml.outcome}} | {{ github.run_attempt }} |
+            |  **Test 1**  | ${{steps.tml.outcome}} | ${{ github.run_attempt }} | 
+            |  **Test 2**  | ${{steps.tml.outcome}} | ${{ github.run_attempt }} | 
+            |  **Test 3**  | ${{steps.tml.outcome}} | ${{ github.run_attempt }} | 
+            |  **Test 4**  | ${{steps.tml.outcome}} | ${{ github.run_attempt }} |
 
             **${{steps.chkout.outputs.actionchk}}**
 
