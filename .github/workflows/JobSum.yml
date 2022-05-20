@@ -41,8 +41,9 @@ jobs:
 
       - name: Add to job summary
         run: |
-          echo "~~~${{steps.quickstart.outputs.hugoQuick}}~~~" >> $GITHUB_STEP_SUMMARY
-
+          echo "~~~" >> $GITHUB_STEP_SUMMARY
+          echo "${{steps.quickstart.outputs.hugoQuick}}" >> $GITHUB_STEP_SUMMARY
+          echo "~~~" >> $GITHUB_STEP_SUMMARY
 
       - name: Create sticky comment
         uses: marocchino/sticky-pull-request-comment@v2.2.0
